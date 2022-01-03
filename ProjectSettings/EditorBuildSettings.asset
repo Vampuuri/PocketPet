@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gamescreen.unity
     guid: 2fb09fff565d2b24982ab484a42bc5ba
+  - enabled: 0
+    path: Assets/Scenes/runnergame.unity
+    guid: 85499390f9520564ab35266f6d255145
   m_configObjects: {}

@@ -17,7 +17,13 @@ public class SpikeGenerator : MonoBehaviour
         generateSpike();
     }
 
-    public void generateSpike()
+    public void GenerateNextSpikeWithGap()
+    {
+        float randomWait = Random.Range(0.1f, 1.2f);
+        Invoke("generateSpike", randomWait);
+    }
+
+   void generateSpike()
     {
         GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
 
