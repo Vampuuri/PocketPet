@@ -7,12 +7,13 @@ public class CanvasMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       gameObject.SetActive (false);
+
+        GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
