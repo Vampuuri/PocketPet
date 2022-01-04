@@ -7,10 +7,10 @@ public class PlayerScript : MonoBehaviour
 
     public float JumpForce;
     float score;
-
-        [SerializeField]
-        bool isGrounded = false;
+	[SerializeField]
+	bool isGrounded = false;
     bool isAlive = true;
+	SpikeGenerator spikeGenerator;
 
     Rigidbody2D RB;
 
@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         score = 0;
         Time.timeScale = 1;
+		spikeGenerator = FindObjectOfType<SpikeGenerator>();
     }
 
     // Update is called once per frame
@@ -36,7 +37,8 @@ public class PlayerScript : MonoBehaviour
 
         if(isAlive)
         {
-            score += Time.deltaTime * 4;
+			Debug.Log(spikeGenerator.currentSpeed);
+            score += Time.deltaTime * spikeGenerator.currentSpeed;
             ScoreTxt.text = "SCORE : " + score.ToString("F0");
         }
     }

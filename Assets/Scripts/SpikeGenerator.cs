@@ -5,7 +5,6 @@ public class SpikeGenerator : MonoBehaviour
     public GameObject spike;
 
     public float MinSpeed;
-    public float MaxSpeed;
     public float currentSpeed;
 
     public float SpeedMultiplier;
@@ -33,9 +32,6 @@ public class SpikeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentSpeed < MaxSpeed)
-        {
-            currentSpeed += SpeedMultiplier;
-        }
+        currentSpeed += SpeedMultiplier;
     }
 }
