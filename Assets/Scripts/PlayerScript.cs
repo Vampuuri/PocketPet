@@ -43,9 +43,9 @@ public class PlayerScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("ground"))
         {
-            if(isGrounded == false)
+            if (isGrounded == false)
             {
                 isGrounded = true;
             }
@@ -54,6 +54,7 @@ public class PlayerScript : MonoBehaviour
         {
             isAlive = false;
             Time.timeScale = 0;
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
