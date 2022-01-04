@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         score = 0;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class PlayerScript : MonoBehaviour
         if(isAlive)
         {
             score += Time.deltaTime * 4;
-            ScoreTxt.text = "SCORE : " + score.ToString("F");
+            ScoreTxt.text = "SCORE : " + score.ToString("F0");
         }
     }
 
