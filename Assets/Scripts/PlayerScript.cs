@@ -55,6 +55,8 @@ public class PlayerScript : MonoBehaviour
             isAlive = false;
             Time.timeScale = 0;
             FindObjectOfType<GameManager>().EndGame();
+            GetComponent<Renderer>().enabled = false;
+
         }
     }
 }

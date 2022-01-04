@@ -603,8 +603,6 @@ GameObject:
   - component: {fileID: 1192441313}
   - component: {fileID: 1192441312}
   - component: {fileID: 1192441311}
-  - component: {fileID: 1192441310}
-  - component: {fileID: 1192441314}
   m_Layer: 0
   m_Name: CanvasMenu
   m_TagString: Untagged
@@ -632,18 +630,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1192441310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192441308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b10698449b32b419de0dabac52a6e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1192441311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,14 +691,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!222 &1192441314
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192441308}
-  m_CullTransparentMesh: 1
 --- !u!1 &1211202175
 GameObject:
   m_ObjectHideFlags: 0
