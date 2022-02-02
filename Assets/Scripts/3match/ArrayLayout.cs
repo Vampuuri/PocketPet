@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrayLayout
 {
 	public Grid grid;
-	public rowData[] rows = new rowData[18];
+	public rowData[] rows = new rowData[9];
 	
     [System.Serializable]
 	public struct rowData

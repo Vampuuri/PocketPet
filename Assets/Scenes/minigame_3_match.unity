@@ -166,6 +166,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1638ae3a0a771624aa6a50b6bae75122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardLayout:
+    grid: {fileID: 0}
+    rows:
+    - row: 000000000000000000
+    - row: 000100000000000100
+    - row: 000100000000000000
+    - row: 000000000100000100
+    - row: 000000000100000000
+    - row: 000000000000000000
+    - row: 000000000000010000
+    - row: 000000000000000000
+    - row: 000000000000000000
+  pieces:
+  - {fileID: 21300000, guid: fe514afa67b55f64c824b21aa796bb85, type: 3}
+  - {fileID: 21300000, guid: 4d783e466e7756b41813a8d3a2af00d5, type: 3}
+  - {fileID: 21300000, guid: 05fb8fef375200048894f02bfff50b66, type: 3}
+  - {fileID: 21300000, guid: a5a3a3537dc186d449b8a666bbb0fc2a, type: 3}
+  - {fileID: 21300000, guid: 921a74eb7e85ddd44b848e28f0b6ca03, type: 3}
 --- !u!1 &1129927146
 GameObject:
   m_ObjectHideFlags: 0
