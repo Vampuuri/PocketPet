@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - button
+  - nextLine
+  - ground
+  - spike
+  - attributes
   layers:
   - Default
   - TransparentFX
