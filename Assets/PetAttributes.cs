@@ -13,8 +13,8 @@ public class PetAttributes : MonoBehaviour
     public static List<GameObject> attributesList = new List<GameObject>();
 
     //Attributes
-    public float minHunger, minHygiene, minEnergy;
-    public float maxHunger, maxHygiene, maxEnergy;
+    public static float minHunger, minHygiene, minEnergy;
+    public static float maxHunger, maxHygiene, maxEnergy;
     public static float hunger, hygiene, energy;
 
 
@@ -129,7 +129,13 @@ public class PetAttributes : MonoBehaviour
             if (SleepMode == true)
             {
                 energy += SleepRegain * Time.deltaTime;
+                if (energy >= 90)
+                {
+                    Debug.Log("im not sleepy!");
+                    SleepMode = false;
+                }
             }
+           
         }
     }
 
