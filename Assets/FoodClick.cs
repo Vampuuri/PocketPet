@@ -23,12 +23,11 @@ public class FoodClick : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("The hunger is " + PetAttributes.hunger);
+
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked Food! Yum!");
         PetAttributes.hunger += 20;
     }
 }

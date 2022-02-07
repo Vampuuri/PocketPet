@@ -10,7 +10,7 @@ public class SleepClick : MonoBehaviour
     private PetAttributes PetSleep;
 
 
-    void HungerSource()
+    void EnergySource()
     {
         PetSleepObject = GameObject.Find("EssinManager");
 
@@ -23,7 +23,7 @@ public class SleepClick : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("The energy is " + PetAttributes.energy);
+ 
     }
 
     private void OnMouseDown()

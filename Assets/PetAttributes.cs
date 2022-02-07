@@ -22,12 +22,15 @@ public class PetAttributes : MonoBehaviour
     public float HygieneSpeed;
     public float EnergySpeed;
     public float SleepRegain;
+    public static float GameEnergyLoss;
 
     public Text HungerTxt;
     public Text HygieneTxt;
     public Text EnergyTxt;
 
     public static bool SleepMode = false;
+
+    public static Button GameButton;
 
 
     private void Awake()
@@ -57,6 +60,7 @@ public class PetAttributes : MonoBehaviour
         HygieneSpeed = 1f;
         EnergySpeed = 0.5f;
         SleepRegain = 2f;
+        GameEnergyLoss = 20;
         maxHunger = 100;
         maxHygiene = 100;
         maxEnergy = 100;
@@ -81,6 +85,7 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun nälkä maxhunger?
                 FullHunger();
             }
+
         }
 
         {
@@ -122,15 +127,9 @@ public class PetAttributes : MonoBehaviour
                 FullEnergy();
             }
         }
-        if (SleepMode == true)
-        {
-            Debug.Log("sleeping bro");
-            energy += SleepRegain * Time.deltaTime;
-        }
-
     }
 
-    void OnSceneLoaded(Scene gamescreen, LoadSceneMode mode)
+void OnSceneLoaded(Scene gamescreen, LoadSceneMode mode)
     {
         //nälkä
         GameObject hungerTextObject = GameObject.Find("Hunger");
@@ -159,17 +158,14 @@ public class PetAttributes : MonoBehaviour
 
     void FullHunger()
     {
-        print("i cant eat more!");
         hunger = 100;
     }
     void FullHygiene()
     {
-        print("cant get cleaner!");
         hygiene = 100;
     }
     void FullEnergy()
     {
-        print("i'm not tired!");
         energy = 100;
     }
 }

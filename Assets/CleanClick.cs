@@ -23,12 +23,11 @@ public class CleanClick : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("The hygiene is " + PetAttributes.hygiene);
+
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("All Clean!");
         PetAttributes.hygiene += 100;
     }
 }
