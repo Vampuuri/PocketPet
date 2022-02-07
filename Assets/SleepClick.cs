@@ -28,7 +28,13 @@ public class SleepClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Zzzzz...");
-        PetAttributes.energy += 100;
+        if (PetAttributes.SleepMode == false)
+        {
+            PetAttributes.SleepMode = true;
+        }
+        else
+        {
+            PetAttributes.SleepMode = false;
+        }
     }
 }

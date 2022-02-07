@@ -16,15 +16,19 @@ public class PetAttributes : MonoBehaviour
     public float minHunger, minHygiene, minEnergy;
     public float maxHunger, maxHygiene, maxEnergy;
     public static float hunger, hygiene, energy;
-    
+
 
     public float HungerSpeed;
     public float HygieneSpeed;
     public float EnergySpeed;
+    public float SleepRegain;
 
     public Text HungerTxt;
     public Text HygieneTxt;
     public Text EnergyTxt;
+
+    public static bool SleepMode = false;
+
 
     private void Awake()
     {
@@ -49,9 +53,10 @@ public class PetAttributes : MonoBehaviour
         hunger = 100;
         hygiene = 100;
         energy = 100;
-        HungerSpeed = 2f;
+        HungerSpeed = 1.5f;
         HygieneSpeed = 1f;
         EnergySpeed = 0.5f;
+        SleepRegain = 2f;
         maxHunger = 100;
         maxHygiene = 100;
         maxEnergy = 100;
@@ -61,12 +66,12 @@ public class PetAttributes : MonoBehaviour
     {
         //nälkä
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if (HungerTxt != null) 
+        if (HungerTxt != null)
             HungerTxt.text = "HUNGER : " + hunger.ToString("F0");
         if (hunger > minHunger)
         {
             hunger -= HungerSpeed * Time.deltaTime;
-            if(hunger <= minHunger)
+            if (hunger <= minHunger)
             {
                 //mitä tapahtuu kun nälkä nolla?
                 Die();
@@ -78,22 +83,24 @@ public class PetAttributes : MonoBehaviour
             }
         }
 
-        //hygienia
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        if (HygieneTxt != null)
-            HygieneTxt.text = "HYGIENE : " + hygiene.ToString("F0");
-        if (hygiene > minHygiene)
         {
-            hygiene -= HygieneSpeed * Time.deltaTime;
-            if (hygiene <= minHygiene)
+            //hygienia
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (HygieneTxt != null)
+                HygieneTxt.text = "HYGIENE : " + hygiene.ToString("F0");
+            if (hygiene > minHygiene)
             {
-                //mitä tapahtuu kun hygienia nolla?
-                Die();
-            }
-            if (hygiene >= maxHygiene)
-            {
-                //mitä tapahtuu kun nälkä maxhygiene?
-                FullHygiene();
+                hygiene -= HygieneSpeed * Time.deltaTime;
+                if (hygiene <= minHygiene)
+                {
+                    //mitä tapahtuu kun hygienia nolla?
+                    Die();
+                }
+                if (hygiene >= maxHygiene)
+                {
+                    //mitä tapahtuu kun nälkä maxhygiene?
+                    FullHygiene();
+                }
             }
         }
 
@@ -106,19 +113,24 @@ public class PetAttributes : MonoBehaviour
             energy -= EnergySpeed * Time.deltaTime;
             if (energy <= minEnergy)
             {
-                //mitä tapahtuu kun hygienia nolla?
+                //mitä tapahtuu kun nolla?
                 Die();
             }
             if (energy >= maxEnergy)
             {
-                //mitä tapahtuu kun nälkä maxhygiene?
+                //mitä tapahtuu kun maxenergy?
                 FullEnergy();
             }
         }
+        if (SleepMode == true)
+        {
+            Debug.Log("sleeping bro");
+            energy += SleepRegain * Time.deltaTime;
+        }
 
     }
-    
-    void OnSceneLoaded (Scene gamescreen, LoadSceneMode mode)
+
+    void OnSceneLoaded(Scene gamescreen, LoadSceneMode mode)
     {
         //nälkä
         GameObject hungerTextObject = GameObject.Find("Hunger");
