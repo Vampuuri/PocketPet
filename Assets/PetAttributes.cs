@@ -126,6 +126,10 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun maxenergy?
                 FullEnergy();
             }
+            if (SleepMode == true)
+            {
+                energy += SleepRegain * Time.deltaTime;
+            }
         }
     }
 
