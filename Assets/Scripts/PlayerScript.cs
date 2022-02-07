@@ -37,7 +37,6 @@ public class PlayerScript : MonoBehaviour
 
         if(isAlive)
         {
-			Debug.Log(spikeGenerator.currentSpeed);
             score += Time.deltaTime * spikeGenerator.currentSpeed;
             ScoreTxt.text = "SCORE : " + score.ToString("F0");
         }

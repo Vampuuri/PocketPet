@@ -3,9 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SleepClick : MonoBehaviour
+
 {
+    public GameObject PetSleepObject;
+
+    private PetAttributes PetSleep;
+
+
+    void HungerSource()
+    {
+        PetSleepObject = GameObject.Find("EssinManager");
+
+    }
+
+    void Awake()
+    {
+        PetSleep = GetComponent<PetAttributes>();
+    }
+
+    private void Start()
+    {
+        Debug.Log("The energy is " + PetAttributes.energy);
+    }
+
     private void OnMouseDown()
     {
-        Debug.Log("Zzzz...");
+        Debug.Log("Zzzzz...");
+        PetAttributes.energy += 100;
     }
 }

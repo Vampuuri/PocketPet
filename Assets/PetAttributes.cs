@@ -14,7 +14,9 @@ public class PetAttributes : MonoBehaviour
 
     //Attributes
     public float minHunger, minHygiene, minEnergy;
+    public float maxHunger, maxHygiene, maxEnergy;
     public static float hunger, hygiene, energy;
+    
 
     public float HungerSpeed;
     public float HygieneSpeed;
@@ -50,6 +52,9 @@ public class PetAttributes : MonoBehaviour
         HungerSpeed = 2f;
         HygieneSpeed = 1f;
         EnergySpeed = 0.5f;
+        maxHunger = 100;
+        maxHygiene = 100;
+        maxEnergy = 100;
     }
 
     void Update()
@@ -66,6 +71,11 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun nälkä nolla?
                 Die();
             }
+            if (hunger >= maxHunger)
+            {
+                //mitä tapahtuu kun nälkä maxhunger?
+                FullHunger();
+            }
         }
 
         //hygienia
@@ -79,6 +89,11 @@ public class PetAttributes : MonoBehaviour
             {
                 //mitä tapahtuu kun hygienia nolla?
                 Die();
+            }
+            if (hygiene >= maxHygiene)
+            {
+                //mitä tapahtuu kun nälkä maxhygiene?
+                FullHygiene();
             }
         }
 
@@ -94,7 +109,13 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun hygienia nolla?
                 Die();
             }
+            if (energy >= maxEnergy)
+            {
+                //mitä tapahtuu kun nälkä maxhygiene?
+                FullEnergy();
+            }
         }
+
     }
     
     void OnSceneLoaded (Scene gamescreen, LoadSceneMode mode)
@@ -122,6 +143,22 @@ public class PetAttributes : MonoBehaviour
     void Die()
     {
         print("you died of hunger");
+    }
+
+    void FullHunger()
+    {
+        print("i cant eat more!");
+        hunger = 100;
+    }
+    void FullHygiene()
+    {
+        print("cant get cleaner!");
+        hygiene = 100;
+    }
+    void FullEnergy()
+    {
+        print("i'm not tired!");
+        energy = 100;
     }
 }
 

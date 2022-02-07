@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 766065549}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -492,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78217f5676b0e3741acf385fba88ce19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PetHungerObject: {fileID: 2135502034}
 --- !u!114 &455675690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +897,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 766065549}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1199,8 +1200,8 @@ RectTransform:
   - {fileID: 455675688}
   - {fileID: 1744073749}
   - {fileID: 2103644402}
-  - {fileID: 582643273}
   - {fileID: 9192690}
+  - {fileID: 582643273}
   - {fileID: 1010979022}
   - {fileID: 764466927}
   - {fileID: 1997342957}
@@ -1804,6 +1805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c11b45082a98c4295762c910a9df5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PetHygieneObject: {fileID: 0}
 --- !u!114 &1744073751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2044,6 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbd957985265294497effe6fb0f7a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PetSleepObject: {fileID: 0}
 --- !u!61 &2103644404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2211,6 +2214,8 @@ MonoBehaviour:
   minHunger: 0
   minHygiene: 0
   minEnergy: 0
+  maxHunger: 100
+  maxHygiene: 0
   HungerSpeed: 5
   HygieneSpeed: 1
   EnergySpeed: 0
