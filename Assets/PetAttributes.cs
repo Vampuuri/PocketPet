@@ -55,10 +55,6 @@ public class PetAttributes : MonoBehaviour
             attributesList.AddRange(GameObject.FindGameObjectsWithTag("attributes"));
             DontDestroyOnLoad(attributes);
         }
-        hungerbar = GameObject.Find("HungerBar").GetComponent<Slider>();
-        hygienebar = GameObject.Find("HygieneBar").GetComponent<Slider>();
-        energybar = GameObject.Find("EnergyBar").GetComponent<Slider>();
-        funbar = GameObject.Find("FunBar").GetComponent<Slider>();
     }
 
     private void Start()
@@ -77,6 +73,11 @@ public class PetAttributes : MonoBehaviour
         maxHunger = 100;
         maxHygiene = 100;
         maxEnergy = 100;
+
+        hungerbar = GameObject.Find("HungerBar").GetComponent<Slider>();
+        hygienebar = GameObject.Find("HygieneBar").GetComponent<Slider>();
+        energybar = GameObject.Find("EnergyBar").GetComponent<Slider>();
+        funbar = GameObject.Find("FunBar").GetComponent<Slider>();
     }
 
     void Update()
@@ -122,7 +123,9 @@ public class PetAttributes : MonoBehaviour
                     FullHygiene();
                 }
             }
-            hygienebar.value = hygiene;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (hygienebar != null)
+                hygienebar.value = hygiene;
         }
 
         //energia
@@ -150,7 +153,9 @@ public class PetAttributes : MonoBehaviour
                     SleepMode = false;
                 }
             }
-            energybar.value = energy;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (energybar != null)
+                energybar.value = energy;
 
         }
         //hupi
@@ -170,7 +175,9 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun nälkä maxhunger?
                 FullFun();
             }
-            funbar.value = fun;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (funbar != null)
+                funbar.value = fun;
 
         }
 
@@ -182,55 +189,69 @@ public class PetAttributes : MonoBehaviour
             {
                 HungerTxt = hungerTextObject.GetComponent<Text>();
             }
-            //koitin tohon Hungerbar monta eri tapaa kirjottaa asian mutta ei auta.
             GameObject HungerBarSlider = GameObject.Find("HungerBar");
             if (HungerBarSlider != null)
             {
                 hungerbar = HungerBarSlider.GetComponent<Slider>();
             }
+        }
             //hygienia
             GameObject hygieneTextObject = GameObject.Find("Hygiene");
             if (hygieneTextObject != null)
             {
                 HygieneTxt = hygieneTextObject.GetComponent<Text>();
-            }
-            //energia
-            GameObject energyTextObject = GameObject.Find("Energy");
-            if (energyTextObject != null)
+            }          
+            GameObject HygieneBarSlider = GameObject.Find("HygieneBar");
+            if (HygieneBarSlider != null)
             {
-                EnergyTxt = energyTextObject.GetComponent<Text>();
+                hygienebar = HygieneBarSlider.GetComponent<Slider>();
+                //energia
+                GameObject energyTextObject = GameObject.Find("Energy");
+                if (energyTextObject != null)
+                {
+                    EnergyTxt = energyTextObject.GetComponent<Text>();
+                }
             }
-            //hupi
-            GameObject funTextObject = GameObject.Find("Fun");
-            if (funTextObject != null)
-            {
-                FunTxt = funTextObject.GetComponent<Text>();
+                GameObject EnergyBarSlider = GameObject.Find("EnergyBar");
+                if (EnergyBarSlider != null)
+                {
+                    energybar = EnergyBarSlider.GetComponent<Slider>();
+                    //hupi
+                    GameObject funTextObject = GameObject.Find("Fun");
+                    if (funTextObject != null)
+                    {
+                        FunTxt = funTextObject.GetComponent<Text>();
+                    }
+                    GameObject FunBarSlider = GameObject.Find("FunBar");
+                    if (FunBarSlider != null)
+                    {
+                        funbar = FunBarSlider.GetComponent<Slider>();
+                    }
+                }
+
+                    void Die()
+                    {
+                        print("you died of hunger");
+                    }
+
+                    void FullHunger()
+                    {
+                        hunger = 100;
+                    }
+                    void FullHygiene()
+                    {
+                        hygiene = 100;
+                    }
+                    void FullEnergy()
+                    {
+                        energy = 100;
+                    }
+                    void FullFun()
+                    {
+                        fun = 100;
+                    }
+                }
             }
-        }
-
-        void Die()
-        {
-            print("you died of hunger");
-        }
-
-        void FullHunger()
-        {
-            hunger = 100;
-        }
-        void FullHygiene()
-        {
-            hygiene = 100;
-        }
-        void FullEnergy()
-        {
-            energy = 100;
-        }
-        void FullFun()
-        {
-            fun = 100;
-        }
-    }
-}
 
 
 

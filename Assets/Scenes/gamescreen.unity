@@ -3442,55 +3442,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103644401}
   m_CullTransparentMesh: 1
---- !u!1 &2135502034
+--- !u!1 &2135502034 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2647659759184994274, guid: f706e0674967e71499b619bc092bea4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2647659757822309168}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2135502036}
-  - component: {fileID: 2135502035}
-  - component: {fileID: 2135502037}
-  m_Layer: 0
-  m_Name: EssinManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2135502035
+--- !u!114 &2135502037 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135502034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae082a1d4066d144e98a1990a2560ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2135502036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135502034}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.39104933, y: 1.2799743, z: 635.71826}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2135502037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2647659757822309168}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135502034}
   m_Enabled: 1
@@ -3498,11 +3460,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335d4722cd0d2a141bba2f587f3aff13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HungerTxt: {fileID: 1010979023}
-  HygieneTxt: {fileID: 764466925}
-  EnergyTxt: {fileID: 1997342955}
-  FunTxt: {fileID: 1409038124}
-  hungerbar: {fileID: 162033742}
-  hygienebar: {fileID: 415696086}
-  energybar: {fileID: 872185211}
-  funbar: {fileID: 1118675991}
+--- !u!1001 &2647659757822309168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2647659759184994274, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_Name
+      value: EssinManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39104933
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2799743
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 635.71826
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994276, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: FunTxt
+      value: 
+      objectReference: {fileID: 1409038124}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: funbar
+      value: 
+      objectReference: {fileID: 1118675991}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: EnergyTxt
+      value: 
+      objectReference: {fileID: 1997342955}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: HungerTxt
+      value: 
+      objectReference: {fileID: 1010979023}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: energybar
+      value: 
+      objectReference: {fileID: 872185211}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: hungerbar
+      value: 
+      objectReference: {fileID: 162033742}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: HygieneTxt
+      value: 
+      objectReference: {fileID: 764466925}
+    - target: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
+        type: 3}
+      propertyPath: hygienebar
+      value: 
+      objectReference: {fileID: 415696086}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f706e0674967e71499b619bc092bea4d, type: 3}
