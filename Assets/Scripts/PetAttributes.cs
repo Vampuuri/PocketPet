@@ -63,7 +63,7 @@ public class PetAttributes : MonoBehaviour
         hygiene = 100;
         energy = 100;
         fun = 100;
-        FunSpeed = 2f;
+        FunSpeed = 0.7f;
         HungerSpeed = 1.5f;
         HygieneSpeed = 1f;
         EnergySpeed = 0.5f;
