@@ -34,6 +34,10 @@ public class PetAttributes : MonoBehaviour
 
     public static Button GameButton;
 
+    public Slider hungerbar;
+    public Slider hygienebar;
+    public Slider energybar;
+    public Slider funbar;
 
     private void Awake()
     {
@@ -51,6 +55,10 @@ public class PetAttributes : MonoBehaviour
             attributesList.AddRange(GameObject.FindGameObjectsWithTag("attributes"));
             DontDestroyOnLoad(attributes);
         }
+        hungerbar = GameObject.Find("HungerBar").GetComponent<Slider>();
+        hygienebar = GameObject.Find("HygieneBar").GetComponent<Slider>();
+        energybar = GameObject.Find("EnergyBar").GetComponent<Slider>();
+        funbar = GameObject.Find("FunBar").GetComponent<Slider>();
     }
 
     private void Start()
@@ -90,7 +98,9 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun nälkä maxhunger?
                 FullHunger();
             }
-
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (hungerbar != null)
+                hungerbar.value = hunger;
         }
 
         {
@@ -112,6 +122,7 @@ public class PetAttributes : MonoBehaviour
                     FullHygiene();
                 }
             }
+            hygienebar.value = hygiene;
         }
 
         //energia
@@ -139,6 +150,7 @@ public class PetAttributes : MonoBehaviour
                     SleepMode = false;
                 }
             }
+            energybar.value = energy;
 
         }
         //hupi
@@ -158,6 +170,7 @@ public class PetAttributes : MonoBehaviour
                 //mitä tapahtuu kun nälkä maxhunger?
                 FullFun();
             }
+            funbar.value = fun;
 
         }
 
@@ -168,6 +181,12 @@ public class PetAttributes : MonoBehaviour
             if (hungerTextObject != null)
             {
                 HungerTxt = hungerTextObject.GetComponent<Text>();
+            }
+            //koitin tohon Hungerbar monta eri tapaa kirjottaa asian mutta ei auta.
+            GameObject HungerBarSlider = GameObject.Find("HungerBar");
+            if (HungerBarSlider != null)
+            {
+                hungerbar = HungerBarSlider.GetComponent<Slider>();
             }
             //hygienia
             GameObject hygieneTextObject = GameObject.Find("Hygiene");
@@ -212,6 +231,7 @@ public class PetAttributes : MonoBehaviour
         }
     }
 }
+
 
 
 
