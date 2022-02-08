@@ -8,6 +8,7 @@ public class FoodClick : MonoBehaviour
     public GameObject PetHungerObject;
 
     private PetAttributes PetHunger;
+    private PetAttributes SleepMode;
 
 
     void HungerSource()
@@ -28,7 +29,10 @@ public class FoodClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PetAttributes.hunger += 20;
+        if (PetAttributes.SleepMode == false)
+        {
+            PetAttributes.hunger += 20;
+        }
     }
 }
 

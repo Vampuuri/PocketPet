@@ -12,9 +12,13 @@ public class GameClick : MonoBehaviour
 
     public void ToGameScene()
     {
-        SceneManager.LoadScene("runnergame");
-        Debug.Log("check");
-        PetAttributes.energy -= PetAttributes.GameEnergyLoss;
+        if (PetAttributes.SleepMode == false)
+        {
+            SceneManager.LoadScene("runnergame");
+            PetAttributes.energy -= PetAttributes.GameEnergyLoss;
+        }
+        else
+            Debug.Log("not now im sleeping!");
     }
 
     void EnergySource()

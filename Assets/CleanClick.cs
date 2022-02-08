@@ -28,6 +28,7 @@ public class CleanClick : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (PetAttributes.SleepMode == false)
         PetAttributes.hygiene += 100;
     }
 }
