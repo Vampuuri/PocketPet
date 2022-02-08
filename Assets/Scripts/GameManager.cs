@@ -1,7 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
+	public Text FunTxt;
 	public void HideEndGame()
 	{
 		Debug.Log("Hide Reset");
@@ -19,6 +25,15 @@ public class GameManager : MonoBehaviour
 		Debug.Log(resetButton);
 		GameObject backButton = GameObject.Find("BackButton");
 		backButton.transform.Translate(Vector2.down * 6f);
+
+		//hupitesti
+
+		GameObject player = GameObject.Find("Player");
+		PlayerScript playerscript = gameObject.GetComponent<PlayerScript>();
+		GameObject EssinManager = GameObject.Find("EssinManager");
+		PetAttributes petattributes = gameObject.GetComponent<PetAttributes>();
+
+		PetAttributes.fun += PlayerScript.score;
 	}
 }
 

@@ -13,9 +13,9 @@ public class PetAttributes : MonoBehaviour
     public static List<GameObject> attributesList = new List<GameObject>();
 
     //Attributes
-    public static float minHunger, minHygiene, minEnergy;
-    public static float maxHunger, maxHygiene, maxEnergy;
-    public static float hunger, hygiene, energy;
+    public static float minHunger, minHygiene, minEnergy, minFun;
+    public static float maxHunger, maxHygiene, maxEnergy, maxFun;
+    public static float hunger, hygiene, energy, fun;
 
 
     public static float HungerSpeed;
@@ -23,10 +23,12 @@ public class PetAttributes : MonoBehaviour
     public static float EnergySpeed;
     public static float SleepRegain;
     public static float GameEnergyLoss;
+    public static float FunSpeed;
 
     public Text HungerTxt;
     public Text HygieneTxt;
     public Text EnergyTxt;
+    public Text FunTxt;
 
     public static bool SleepMode = false;
 
@@ -56,11 +58,14 @@ public class PetAttributes : MonoBehaviour
         hunger = 100;
         hygiene = 100;
         energy = 100;
+        fun = 100;
+        FunSpeed = 2f;
         HungerSpeed = 1.5f;
         HygieneSpeed = 1f;
         EnergySpeed = 0.5f;
         SleepRegain = 2f;
         GameEnergyLoss = 20;
+        maxFun = 100;
         maxHunger = 100;
         maxHygiene = 100;
         maxEnergy = 100;
@@ -71,7 +76,7 @@ public class PetAttributes : MonoBehaviour
         //nälkä
         SceneManager.sceneLoaded += OnSceneLoaded;
         if (HungerTxt != null)
-            HungerTxt.text = "HUNGER : " + hunger.ToString("F0");
+            HungerTxt.text = "HUNGER: " + hunger.ToString("F0");
         if (hunger > minHunger)
         {
             hunger -= HungerSpeed * Time.deltaTime;
@@ -92,7 +97,7 @@ public class PetAttributes : MonoBehaviour
             //hygienia
             SceneManager.sceneLoaded += OnSceneLoaded;
             if (HygieneTxt != null)
-                HygieneTxt.text = "HYGIENE : " + hygiene.ToString("F0");
+                HygieneTxt.text = "HYGIENE: " + hygiene.ToString("F0");
             if (hygiene > minHygiene)
             {
                 hygiene -= HygieneSpeed * Time.deltaTime;
@@ -112,7 +117,7 @@ public class PetAttributes : MonoBehaviour
         //energia
         SceneManager.sceneLoaded += OnSceneLoaded;
         if (EnergyTxt != null)
-            EnergyTxt.text = "ENERGY : " + energy.ToString("F0");
+            EnergyTxt.text = "ENERGY: " + energy.ToString("F0");
         if (energy > minEnergy)
         {
             energy -= EnergySpeed * Time.deltaTime;
@@ -134,48 +139,77 @@ public class PetAttributes : MonoBehaviour
                     SleepMode = false;
                 }
             }
-           
-        }
-    }
 
-void OnSceneLoaded(Scene gamescreen, LoadSceneMode mode)
-    {
-        //nälkä
-        GameObject hungerTextObject = GameObject.Find("Hunger");
-        if (hungerTextObject != null)
-        {
-            HungerTxt = hungerTextObject.GetComponent<Text>();
         }
-        //hygienia
-        GameObject hygieneTextObject = GameObject.Find("Hygiene");
-        if (hygieneTextObject != null)
+        //hupi
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (FunTxt != null)
+            FunTxt.text = "FUN: " + fun.ToString("F0");
+        if (fun > minFun)
         {
-            HygieneTxt = hygieneTextObject.GetComponent<Text>();
-        }
-        //energia
-        GameObject energyTextObject = GameObject.Find("Energy");
-        if (energyTextObject != null)
-        {
-            EnergyTxt = energyTextObject.GetComponent<Text>();
-        }
-    }
+            fun -= FunSpeed * Time.deltaTime;
+            if (fun <= minFun)
+            {
+                //mitä tapahtuu kun nälkä nolla?
+                Die();
+            }
+            if (fun >= maxFun)
+            {
+                //mitä tapahtuu kun nälkä maxhunger?
+                FullFun();
+            }
 
-    void Die()
-    {
-        print("you died of hunger");
-    }
+        }
 
-    void FullHunger()
-    {
-        hunger = 100;
-    }
-    void FullHygiene()
-    {
-        hygiene = 100;
-    }
-    void FullEnergy()
-    {
-        energy = 100;
+        void OnSceneLoaded(Scene gamescreen, LoadSceneMode mode)
+        {
+            //nälkä
+            GameObject hungerTextObject = GameObject.Find("Hunger");
+            if (hungerTextObject != null)
+            {
+                HungerTxt = hungerTextObject.GetComponent<Text>();
+            }
+            //hygienia
+            GameObject hygieneTextObject = GameObject.Find("Hygiene");
+            if (hygieneTextObject != null)
+            {
+                HygieneTxt = hygieneTextObject.GetComponent<Text>();
+            }
+            //energia
+            GameObject energyTextObject = GameObject.Find("Energy");
+            if (energyTextObject != null)
+            {
+                EnergyTxt = energyTextObject.GetComponent<Text>();
+            }
+            //hupi
+            GameObject funTextObject = GameObject.Find("Fun");
+            if (funTextObject != null)
+            {
+                FunTxt = funTextObject.GetComponent<Text>();
+            }
+        }
+
+        void Die()
+        {
+            print("you died of hunger");
+        }
+
+        void FullHunger()
+        {
+            hunger = 100;
+        }
+        void FullHygiene()
+        {
+            hygiene = 100;
+        }
+        void FullEnergy()
+        {
+            energy = 100;
+        }
+        void FullFun()
+        {
+            fun = 100;
+        }
     }
 }
 

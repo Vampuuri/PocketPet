@@ -1,12 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerScript : MonoBehaviour
 {
 
     public float JumpForce;
-    float score;
+    public static float score;
 	[SerializeField]
 	bool isGrounded = false;
     bool isAlive = true;
@@ -38,7 +41,7 @@ public class PlayerScript : MonoBehaviour
         if(isAlive)
         {
             score += Time.deltaTime * spikeGenerator.currentSpeed;
-            ScoreTxt.text = "SCORE : " + score.ToString("F0");
+            ScoreTxt.text = "SCORE: " + score.ToString("F0");
         }
     }
 
@@ -57,7 +60,6 @@ public class PlayerScript : MonoBehaviour
             Time.timeScale = 0;
             FindObjectOfType<GameManager>().EndGame();
             GetComponent<Renderer>().enabled = false;
-
         }
     }
 }
