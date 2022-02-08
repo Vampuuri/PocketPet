@@ -18,10 +18,10 @@ public class PetAttributes : MonoBehaviour
     public static float hunger, hygiene, energy;
 
 
-    public float HungerSpeed;
-    public float HygieneSpeed;
-    public float EnergySpeed;
-    public float SleepRegain;
+    public static float HungerSpeed;
+    public static float HygieneSpeed;
+    public static float EnergySpeed;
+    public static float SleepRegain;
     public static float GameEnergyLoss;
 
     public Text HungerTxt;
@@ -129,9 +129,8 @@ public class PetAttributes : MonoBehaviour
             if (SleepMode == true)
             {
                 energy += SleepRegain * Time.deltaTime;
-                if (energy >= 90)
+                if (energy >= maxEnergy)
                 {
-                    Debug.Log("im not sleepy!");
                     SleepMode = false;
                 }
             }
