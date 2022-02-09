@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
 
         if(isAlive)
         {
-            score += Time.deltaTime * spikeGenerator.currentSpeed;
+            score += Time.deltaTime * spikeGenerator.currentSpeed * 0.4f;
             ScoreTxt.text = "SCORE: " + score.ToString("F0");
         }
     }

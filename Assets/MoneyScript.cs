@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoneyScript : MonoBehaviour
 {
-
+    Rigidbody2D RB;
     public MoneyGenerator moneyGenerator;
 
     void Update()
@@ -14,16 +14,22 @@ public class MoneyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("nextLine"))
         {
-           moneyGenerator.GenerateNextMoneyWithGap();
+            moneyGenerator.GenerateNextMoneyWithGap();
         }
         if (collision.gameObject.CompareTag("Finish"))
         {
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //tähän mitä kolikolle tapahtuu. se ei katoo?
-            Destroy(this.gameObject);
-        }
     }
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.gameObject.CompareTag("Player"))
+            {
+                //tähän mitä kolikolle tapahtuu. se ei katoo?
+                Destroy(this.gameObject);
+            }
+
+        }
 }
