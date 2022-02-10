@@ -4,6 +4,7 @@ public class MoneyScript : MonoBehaviour
 {
     Rigidbody2D RB;
     public MoneyGenerator moneyGenerator;
+    public int coinValue = 1;
 
     void Update()
     {
@@ -24,7 +25,7 @@ public class MoneyScript : MonoBehaviour
         {
             //the coin does get destroyed but sometimes it bonks the player. why?
             Destroy(this.gameObject);
-
+            CoinCounter.instance.ChangeCoinCount(coinValue);
         }
     }
 }

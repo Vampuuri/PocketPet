@@ -10,6 +10,7 @@ TagManager:
   - ground
   - spike
   - attributes
+  - coins
   layers:
   - Default
   - TransparentFX
