@@ -20,16 +20,11 @@ public class MoneyScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-
-
-        private void OnCollisionEnter2D(Collision2D collision)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.collider.gameObject.CompareTag("Player"))
-            {
-                //tähän mitä kolikolle tapahtuu. se ei katoo?
-                Destroy(this.gameObject);
-            }
+            //the coin does get destroyed but sometimes it bonks the player. why?
+            Destroy(this.gameObject);
 
         }
+    }
 }
