@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyGenerator: {fileID: 0}
+  coinValue: 1
 --- !u!61 &6344390410927714704
 BoxCollider2D:
   m_ObjectHideFlags: 0

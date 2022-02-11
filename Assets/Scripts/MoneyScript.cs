@@ -1,10 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoneyScript : MonoBehaviour
 {
     Rigidbody2D RB;
     public MoneyGenerator moneyGenerator;
     public int coinValue = 1;
+
+    private GameInventoryScript inventory;
+
+    private List<Item> itemList;
+
+    private void Awake()
+    {
+        inventory = new GameInventoryScript();
+    }
+
+    private void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -23,9 +41,8 @@ public class MoneyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            //the coin does get destroyed but sometimes it bonks the player. why?
-            Destroy(this.gameObject);
             CoinCounter.instance.ChangeCoinCount(coinValue);
+            Destroy(this.gameObject);
         }
     }
 }

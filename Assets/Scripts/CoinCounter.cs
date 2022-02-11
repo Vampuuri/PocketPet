@@ -16,6 +16,7 @@ using UnityEngine.UI;
         {
             instance = this;
         }
+        
     }
     
     public void ChangeCoinCount(int coinValue)
