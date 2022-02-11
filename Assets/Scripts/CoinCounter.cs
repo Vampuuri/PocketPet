@@ -8,7 +8,13 @@ using UnityEngine.UI;
 {
     public static CoinCounter instance;
     public Text CoinCount;
-    int coins;
+    public static int coins;
+
+
+    private GameInventoryScript inventory;
+    private List<Item> itemList;
+
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -23,6 +29,7 @@ using UnityEngine.UI;
     {
         coins += coinValue;
         CoinCount.text = "Coins: " + coins.ToString();
+
     }
 }
 

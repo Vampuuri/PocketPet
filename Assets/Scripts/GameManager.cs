@@ -7,6 +7,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
+
+	private GameInventoryScript inventory;
 	public Text FunTxt;
 	public void HideEndGame()
 	{

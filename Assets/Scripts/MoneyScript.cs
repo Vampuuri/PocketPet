@@ -43,6 +43,9 @@ public class MoneyScript : MonoBehaviour
         {
             CoinCounter.instance.ChangeCoinCount(coinValue);
             Destroy(this.gameObject);
+
+            //jos tästä lisää niin menee kokoajan takas ykköseen määrä?
+            inventory.AddItem(new Item { itemType = Item.ItemType.Coins, amount = coinValue });
         }
     }
 }
