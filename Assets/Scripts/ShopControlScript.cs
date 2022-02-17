@@ -19,11 +19,14 @@ public class ShopControlScript : MonoBehaviour
 
     public static float minMoney;
 
+    public GameInventoryScript inventory;
+
     private void Start()
     {
+        inventory = GameObject.Find("EssinManager").GetComponent<GameInventoryScript>();
         minMoney = 0;
 
-        moneyAmount = 5;
+        moneyAmount = inventory.moneyAmount;
         hayPrice = 2;
 
         //koodi kertaostettaville esineille
@@ -44,6 +47,8 @@ public class ShopControlScript : MonoBehaviour
         if (moneyAmount - hayPrice >= minMoney)
         {
             moneyAmount -= hayPrice;
+            inventory.AddMoney(-hayPrice);
+            inventory.AddItem(new Item(Item.ItemType.Hay,1));
             Debug.Log("bought!");
         }
         else

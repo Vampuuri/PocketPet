@@ -12,5 +12,11 @@ public class Item
 
     public ItemType itemType;
     public int amount;
+
+    public Item(ItemType IT, int initialAmount)
+    {
+        itemType = IT;
+        amount = initialAmount;
+    }
 }
 

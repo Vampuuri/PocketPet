@@ -10,6 +10,13 @@ public class FoodClick : MonoBehaviour
     private PetAttributes PetHunger;
     private PetAttributes SleepMode;
 
+    public GameInventoryScript inventory;
+
+
+    void Start()
+    {
+        inventory = GameObject.Find("EssinManager").GetComponent<GameInventoryScript>();
+    }
 
     void HungerSource()
     {
@@ -22,16 +29,15 @@ public class FoodClick : MonoBehaviour
         PetHunger = GetComponent<PetAttributes>();
     }
 
-    private void Start()
-    {
-
-    }
-
     private void OnMouseDown()
     {
         if (PetAttributes.SleepMode == false)
         {
-            PetAttributes.hunger += 20;
+            if (inventory.GetAmountOfItemType(Item.ItemType.Hay) > 0)
+            {
+                PetAttributes.hunger += 20;
+                inventory.RemoveItem(Item.ItemType.Hay);
+            }
         }
     }
 }

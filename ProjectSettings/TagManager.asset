@@ -11,6 +11,7 @@ TagManager:
   - spike
   - attributes
   - coins
+  - GameInventory
   layers:
   - Default
   - TransparentFX
