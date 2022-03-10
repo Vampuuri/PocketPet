@@ -840,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PetHungerObject: {fileID: 2135502034}
+  inventory: {fileID: 0}
 --- !u!114 &455675690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4078,6 +4079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72f96462e039014aabe4c32b352680a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyAmount: 0
 --- !u!114 &2135502037 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2647659759184994277, guid: f706e0674967e71499b619bc092bea4d,
@@ -4088,6 +4090,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 335d4722cd0d2a141bba2f587f3aff13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2135502039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135502034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22f48d919e6736499e1bbdaa76f066f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2647659757822309168
@@ -4197,5 +4211,6 @@ PrefabInstance:
       propertyPath: hygienebar
       value: 
       objectReference: {fileID: 415696086}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8481898715054695444, guid: f706e0674967e71499b619bc092bea4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f706e0674967e71499b619bc092bea4d, type: 3}
