@@ -7,9 +7,10 @@ public class FunctionTimer
 {
     public static FunctionTimer Create(Action action, float timer)
     {
-        FunctionTimer functionTimer = new FunctionTimer(action, timer);
-
         GameObject gameObject = new GameObject("FunctionTimer", typeof(MonoBehaviourHook));
+
+        FunctionTimer functionTimer = new FunctionTimer(action, timer, gameObject);
+
         gameObject.GetComponent<MonoBehaviourHook>().onUpdate = functionTimer.Update;
 
         return functionTimer;
@@ -27,12 +28,14 @@ public class FunctionTimer
 
     private Action action;
     private float timer;
+    private GameObject gameObject;
     private bool isDestroyed;
 
-    private FunctionTimer(Action action, float timer)
+    private FunctionTimer(Action action, float timer, GameObject gameObject)
     {
         this.action = action;
         this.timer = timer;
+        this.gameObject = gameObject;
         isDestroyed = false;
     }
 
@@ -51,5 +54,6 @@ public class FunctionTimer
     private void DestroySelf()
     {
         isDestroyed = true;
+        UnityEngine.Object.Destroy(gameObject);
     }
 }
