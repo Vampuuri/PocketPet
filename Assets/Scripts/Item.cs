@@ -8,6 +8,12 @@ public class Item
     {
         Coins,
         Hay,
+        Meat,
+        Fish,
+        Carrot,
+        Apple,
+        Bone,
+        Candy,
     }
 
     public ItemType itemType;
