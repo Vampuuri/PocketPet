@@ -7,6 +7,7 @@ public class MoveEvolveButton : MonoBehaviour
 {
 
     private FunctionTimer functionTimer;
+    public GameObject myButton;
 
     private void Start()
     {
@@ -24,5 +25,7 @@ public class MoveEvolveButton : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("evolved");
+        myButton.SetActive(false);
     }
+
 }

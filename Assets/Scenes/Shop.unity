@@ -1622,6 +1622,25 @@ MonoBehaviour:
   m_Text: 'fish
 
     1 dolla'
+--- !u!1 &1198699022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2647659759184994274, guid: f706e0674967e71499b619bc092bea4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1890531687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1198699027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198699022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72f96462e039014aabe4c32b352680a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyAmount: 0
 --- !u!1 &1315178055
 GameObject:
   m_ObjectHideFlags: 0
