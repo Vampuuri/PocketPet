@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c11b45082a98c4295762c910a9df5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PetHygieneObject: {fileID: 0}
+  PetHygieneObject: {fileID: 6127199338167935400}
 --- !u!114 &1744073751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,7 +3304,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1744073752}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 766065550}
+        m_TargetAssemblyTypeName: GameClick, Assembly-CSharp
+        m_MethodName: ToWashroomScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1744073752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4241,6 +4253,11 @@ PrefabInstance:
       propertyPath: pet
       value: 
       objectReference: {fileID: 6127199338167935400}
+    - target: {fileID: 6127199339437567370, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 6127199338167935404}
     - target: {fileID: 6127199339437567373, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_RootOrder
@@ -4316,6 +4333,12 @@ PrefabInstance:
 --- !u!1 &6127199338167935400 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6127199339437567361, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6127199338167935399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6127199338167935404 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6127199339437567374, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
     type: 3}
   m_PrefabInstance: {fileID: 6127199338167935399}
   m_PrefabAsset: {fileID: 0}

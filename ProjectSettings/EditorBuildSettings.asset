@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameInventory.unity
     guid: d82be81653cb51e489497a1c2a265fb4
+  - enabled: 1
+    path: Assets/Scenes/washroom.unity
+    guid: 5735c1ee877307948b5e9d2fa61b7184
   m_configObjects: {}

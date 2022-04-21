@@ -21,6 +21,16 @@ public class GameClick : MonoBehaviour
             Debug.Log("not now im sleeping!");
     }
 
+    public void ToWashroomScene()
+    {
+        if (PetAttributes.SleepMode == false)
+        {
+            SceneManager.LoadScene("washroom");
+        }
+        else
+            Debug.Log("not now im sleeping!");
+    }
+
     void EnergySource()
     {
         PetSleepObject = GameObject.Find("EssinManager");

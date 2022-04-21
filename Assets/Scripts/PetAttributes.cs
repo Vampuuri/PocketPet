@@ -39,6 +39,8 @@ public class PetAttributes : MonoBehaviour
     public Slider energybar;
     public Slider funbar;
 
+    public bool evobuttonBool;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -78,6 +80,9 @@ public class PetAttributes : MonoBehaviour
         hygienebar = GameObject.Find("HygieneBar").GetComponent<Slider>();
         energybar = GameObject.Find("EnergyBar").GetComponent<Slider>();
         funbar = GameObject.Find("FunBar").GetComponent<Slider>();
+
+        evobuttonBool = true;
+        PlayerPrefs.SetInt("EvolveBool", (evobuttonBool ? 1 : 0));
     }
 
     void Update()
