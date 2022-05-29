@@ -195,6 +195,25 @@ PrefabInstance:
     - {fileID: 6127199339437567370, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
     - {fileID: 6127199339437567360, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
+--- !u!1 &251310519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6127199339437567361, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 251310518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &251310520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251310519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c11b45082a98c4295762c910a9df5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PetHygieneObject: {fileID: 251310519}
 --- !u!1 &266163930
 GameObject:
   m_ObjectHideFlags: 0

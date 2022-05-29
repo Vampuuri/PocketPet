@@ -30,6 +30,7 @@ public class CleanClick : MonoBehaviour
     {
         if (PetAttributes.SleepMode == false)
         PetAttributes.hygiene += 100;
+        Debug.Log("hygiene raised");
     }
 }
 

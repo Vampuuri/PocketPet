@@ -57,7 +57,7 @@ public class CursorController : MonoBehaviour
     private void OnDisable()
     {
         //not set to an instance of an object?
-        controls.Disable();
+        //controls.Disable();
     }
 
 
