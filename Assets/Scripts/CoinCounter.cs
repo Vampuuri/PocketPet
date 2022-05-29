@@ -12,6 +12,8 @@ using UnityEngine.UI;
 
 
     private GameInventoryScript inventory;
+    private PlayerScript playerScript;
+
     private List<Item> itemList;
 
     private GameManager gameManager;
@@ -22,14 +24,17 @@ using UnityEngine.UI;
         {
             instance = this;
         }
-        
+        playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();
     }
-    
+
+    private void Update()
+    {
+        CoinCount.text = "Coins: " + playerScript.coinAmount.ToString();
+    }
+
     public void ChangeCoinCount(int coinValue)
     {
         coins += coinValue;
-        CoinCount.text = "Coins: " + coins.ToString();
-
     }
 }
 

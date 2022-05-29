@@ -41,9 +41,10 @@ public class MoneyScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            CoinCounter.instance.ChangeCoinCount(coinValue);
+            //CoinCounter.instance.ChangeCoinCount(coinValue);
             Destroy(this.gameObject);
-            inventory.AddMoney(coinValue);
+            //inventory.AddMoney(coinValue);
+            GameObject.Find("Player").GetComponent<PlayerScript>().AddCoin();
         }
     }
 }

@@ -19,12 +19,20 @@ public class PlayerScript : MonoBehaviour
 
     public Text ScoreTxt;
 
+    public int coinAmount;
+
+    private GameInventoryScript inventory;
+
     private void Awake()
     {
         RB = GetComponent<Rigidbody2D>();
         score = 0;
         Time.timeScale = 1;
 		spikeGenerator = FindObjectOfType<SpikeGenerator>();
+
+        coinAmount = 0;
+
+        inventory = GameObject.Find("EssinManager").GetComponent<GameInventoryScript>();
     }
 
     // Update is called once per frame
@@ -60,6 +68,12 @@ public class PlayerScript : MonoBehaviour
             Time.timeScale = 0;
             FindObjectOfType<GameManager>().EndGame();
             GetComponent<Renderer>().enabled = false;
+            inventory.AddMoney(coinAmount);
+            coinAmount = 0;
         }
+    }
+    public void AddCoin()
+    {
+        coinAmount++;
     }
 }

@@ -14,9 +14,10 @@ public class CursorController : MonoBehaviour
 
     public static CursorController instance;
 
-
     private void Awake()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        bool inWashroom = currentScene.name == "washroom";
         CursorControllerObject = GameObject.Find("CursorController");
 
         if (instance != null && instance != this)
@@ -29,29 +30,23 @@ public class CursorController : MonoBehaviour
             DontDestroyOnLoad(CursorControllerObject);
         }
 
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (sceneName == "washroom")
-        {
-            //jos tämän rivin ottaa pois niin kursori vaihtuu halutusti, mutta obviously klikkaaminen ei toimi.
             controls = new CursorControls();
 
-            ChangeCursor(cursor);
             controls.Mouse.Click.started += _ => StartedClick();
             controls.Mouse.Click.performed += _ => EndedClick();
             controls.Enable();
+
+        if (inWashroom)
+        {
+            ChangeCursor(cursor);
         }
         else
         {
-            //en pysty disableemaan niitä kontrolleja et se hiiri vaihtuis ja silti washroom skenessä vois klikata.
-            //ne kontrollit jostain syystä pakottaa sen sienikuvan siihen.
             ChangeCursorNormal(normalcursor);
-            controls.Disable();
         }
     }
-
 
 
     private void OnEnable()
@@ -61,18 +56,29 @@ public class CursorController : MonoBehaviour
 
     private void OnDisable()
     {
+        //not set to an instance of an object?
         controls.Disable();
     }
 
 
     private void StartedClick()
     {
-        ChangeCursor(cursorClicked);
+        Scene currentScene = SceneManager.GetActiveScene();
+        bool inWashroom = currentScene.name == "washroom";
+        if (inWashroom)
+        {
+            ChangeCursor(cursorClicked);
+        }
     }
 
     private void EndedClick()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        bool inWashroom = currentScene.name == "washroom";
+        if (inWashroom)
+        {
             ChangeCursor(cursor);
+        }
     }
 
     private void ChangeCursor(Texture2D cursorType)
