@@ -143,12 +143,12 @@ PrefabInstance:
     - target: {fileID: 6127199339437567373, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6127199339437567373, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 6127199339437567373, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
@@ -190,6 +190,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 10.731684
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 18.575293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1.3586359
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 11.728906
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6127199339437567372, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
     - {fileID: 6127199339437567370, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
@@ -214,6 +234,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PetHygieneObject: {fileID: 251310519}
+--- !u!114 &251310521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251310519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a7366276c0d2e40b74b1b69c6f6331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsHoldingDown: 0
+  WashingText: {fileID: 1666498360}
+  StartedWashing: 0
+  PetHygieneObject: {fileID: 0}
+  TimerText: {fileID: 2053064818}
 --- !u!1 &266163930
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +830,7 @@ GameObject:
   - component: {fileID: 1666498361}
   - component: {fileID: 1666498360}
   m_Layer: 5
-  m_Name: Text
+  m_Name: washing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,9 +888,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'this is the washroom
+  m_Text: 'Start washing!
 
-    for washing'
+
+    Hold down the mouse button to wash your pet.'
 --- !u!222 &1666498361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -874,7 +912,7 @@ GameObject:
   - component: {fileID: 2053064819}
   - component: {fileID: 2053064818}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -932,7 +970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: oof im dirtyyy
+  m_Text: Timer
 --- !u!222 &2053064819
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class CleanClick : MonoBehaviour
     private PetAttributes PetHygiene;
 
 
-    void HungerSource()
+    void HygieneSource()
     {
         PetHygieneObject = GameObject.Find("EssinManager");
 
@@ -28,7 +28,7 @@ public class CleanClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (PetAttributes.SleepMode == false)
+        //if (PetAttributes.SleepMode == false)
         PetAttributes.hygiene += 100;
         Debug.Log("hygiene raised");
     }
