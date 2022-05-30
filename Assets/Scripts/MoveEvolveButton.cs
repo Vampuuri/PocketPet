@@ -19,25 +19,13 @@ public class MoveEvolveButton : MonoBehaviour
 
     private void MoveButton()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        bool inGame = currentScene.name == "gamescreen";
-
-        PlayerPrefs.SetInt("EvolveBool", 1);
-        if (inGame)
+        Debug.Log(PlayerPrefs.GetInt("EvolveBool"));
+        if (PlayerPrefs.GetInt("EvolveBool") == 1)
         {
-            bool inGameAgain = inGame == true;
-            Debug.Log(PlayerPrefs.GetInt("EvolveBool"));
-            if (inGameAgain == false)
-            {
-                if (PlayerPrefs.GetInt("EvolveBool") == 1)
-                {
-                    Debug.Log("successful button move");
-                    GameObject evolveButton = GameObject.Find("EvolveButton");
-                    evolveButton.transform.Translate(Vector2.down * 7f);
-                    PlayerPrefs.SetInt("EvolveBool", 0);
-                    inGameAgain = true;
-                }
-            }
+            Debug.Log("successful button move");
+            GameObject evolveButton = GameObject.Find("EvolveButton");
+            evolveButton.transform.Translate(Vector2.down * 7f);
+            PlayerPrefs.SetInt("EvolveBool", 0);
         }
     }
 

@@ -8,20 +8,22 @@ public class WashingScript : MonoBehaviour
     public Text WashingText;
 
     public bool StartedWashing;
+    public bool WashingDoneBool;
 
     private PetAttributes PetHygiene;
     public GameObject PetHygieneObject;
 
-    float boolTime = 0;
-
     private float timeCounter;
     public Text TimerText;
+
+    public float washTime = 10.0f;
 
 
 
     void Awake()
     {
         PetHygiene = GetComponent<PetAttributes>();
+        WashingDoneBool = false;
     }
 
     private void Update()
@@ -43,13 +45,41 @@ public class WashingScript : MonoBehaviour
             timeCounter += Time.deltaTime;
             TimerText.text = timeCounter.ToString("0");
         }
+
+        if (IsHoldingDown == true)
+        {
+            washTime -= Time.deltaTime;
+        }
+
+        if (washTime <= 0.0f)
+        {
+            timerEnded();
+        }
+
+        if (WashingDoneBool == true)
+        {
+            WashingDone();
+            WashingDoneBool = false;
+        }
     }
 
     
     void HygieneSource()
     {
         PetHygieneObject = GameObject.Find("EssinManager");
+    }
 
+    private void WashingDone()
+    {
+        PetAttributes.hygiene += 100;
+        Debug.Log("hygiene raised");
+    }
+
+    void timerEnded()
+    {
+        WashingText.text = ("Washing's done, good job!");
+        TimerText.text = timeCounter.ToString("done");
+        WashingDoneBool = true;
     }
 
 }

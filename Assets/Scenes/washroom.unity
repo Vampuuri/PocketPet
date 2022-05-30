@@ -221,19 +221,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 251310518}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &251310520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251310519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c11b45082a98c4295762c910a9df5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PetHygieneObject: {fileID: 251310519}
 --- !u!114 &251310521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +236,10 @@ MonoBehaviour:
   IsHoldingDown: 0
   WashingText: {fileID: 1666498360}
   StartedWashing: 0
-  PetHygieneObject: {fileID: 0}
+  WashingDoneBool: 0
+  PetHygieneObject: {fileID: 956716134}
   TimerText: {fileID: 2053064818}
+  washTime: 5
 --- !u!1 &266163930
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +398,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &956716134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2647659759184994274, guid: f706e0674967e71499b619bc092bea4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2103091892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1014962865
 GameObject:
   m_ObjectHideFlags: 0
