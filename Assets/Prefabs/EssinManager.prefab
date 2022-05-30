@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2647659759184994276}
   - component: {fileID: 2647659759184994275}
   - component: {fileID: 2647659759184994277}
-  - component: {fileID: -8481898715054695444}
   m_Layer: 0
   m_Name: EssinManager
   m_TagString: Untagged
@@ -65,15 +64,4 @@ MonoBehaviour:
   hygienebar: {fileID: 0}
   energybar: {fileID: 0}
   funbar: {fileID: 0}
---- !u!114 &-8481898715054695444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647659759184994274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22f48d919e6736499e1bbdaa76f066f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  evobuttonBool: 0
