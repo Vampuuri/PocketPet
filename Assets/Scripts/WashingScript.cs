@@ -9,6 +9,8 @@ public class WashingScript : MonoBehaviour
 
     public bool StartedWashing;
     public bool WashingDoneBool;
+    public bool isHovered;
+    public bool hittingCollider;
 
     private PetAttributes PetHygiene;
     public GameObject PetHygieneObject;
@@ -17,8 +19,6 @@ public class WashingScript : MonoBehaviour
     public Text TimerText;
 
     public float washTime = 10.0f;
-
-
 
     void Awake()
     {
@@ -30,9 +30,12 @@ public class WashingScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            IsHoldingDown = true;
-            WashingText.text = ("Washing...");
-            StartedWashing = true;
+            if (hittingCollider == true)
+            {
+                IsHoldingDown = true;
+                WashingText.text = ("Washing...");
+                StartedWashing = true;
+            }
         }
         else if(StartedWashing == true)
         {
@@ -81,5 +84,13 @@ public class WashingScript : MonoBehaviour
         TimerText.text = timeCounter.ToString("done");
         WashingDoneBool = true;
     }
+    private void OnMouseOver()
+    {
+        hittingCollider = true;
+    }
 
+    private void OnMouseExit()
+    {
+        hittingCollider = false;
+    }
 }
