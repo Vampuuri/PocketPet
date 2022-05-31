@@ -193,22 +193,22 @@ PrefabInstance:
     - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_Size.x
-      value: 10.731684
+      value: 20.571724
       objectReference: {fileID: 0}
     - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_Size.y
-      value: 18.575293
+      value: 19.441467
       objectReference: {fileID: 0}
     - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_Offset.x
-      value: 1.3586359
+      value: -1.177772
       objectReference: {fileID: 0}
     - target: {fileID: 6127199339437567375, guid: d5ff0ee3f710be043a5f7edf0fab4dc6,
         type: 3}
       propertyPath: m_Offset.y
-      value: 11.728906
+      value: 10.924601
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6127199339437567372, guid: d5ff0ee3f710be043a5f7edf0fab4dc6, type: 3}
@@ -237,6 +237,8 @@ MonoBehaviour:
   WashingText: {fileID: 1666498360}
   StartedWashing: 0
   WashingDoneBool: 0
+  isHovered: 0
+  hittingCollider: 0
   PetHygieneObject: {fileID: 956716134}
   TimerText: {fileID: 2053064818}
   washTime: 5
