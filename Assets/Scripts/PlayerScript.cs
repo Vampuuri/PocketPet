@@ -75,5 +75,7 @@ public class PlayerScript : MonoBehaviour
     public void AddCoin()
     {
         coinAmount++;
+        //bonus points for getting coins
+        score += 5;
     }
 }
