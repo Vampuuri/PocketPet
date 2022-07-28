@@ -119,8 +119,7 @@ public class PetAttributes : MonoBehaviour
                 hygiene -= HygieneSpeed * Time.deltaTime;
                 if (hygiene <= minHygiene)
                 {
-                    //mitä tapahtuu kun hygienia nolla?
-                    Die();
+                    EmptyHygiene();
                 }
                 if (hygiene >= maxHygiene)
                 {
@@ -142,8 +141,7 @@ public class PetAttributes : MonoBehaviour
             energy -= EnergySpeed * Time.deltaTime;
             if (energy <= minEnergy)
             {
-                //mitä tapahtuu kun nolla?
-                Die();
+                EmptyEnergy();
             }
             if (energy >= maxEnergy)
             {
@@ -172,8 +170,7 @@ public class PetAttributes : MonoBehaviour
             fun -= FunSpeed * Time.deltaTime;
             if (fun <= minFun)
             {
-                //mitä tapahtuu kun nälkä nolla?
-                Die();
+                EmptyFun();
             }
             if (fun >= maxFun)
             {
@@ -238,7 +235,18 @@ public class PetAttributes : MonoBehaviour
                     {
                         print("you died of hunger");
                     }
-
+                    void EmptyHygiene()
+                    {
+                        print("your pet is filthy!");
+                    } 
+                    void EmptyEnergy()
+                    {
+                        print("your pet has no energy!");
+                    } 
+                    void EmptyFun()
+                    {
+                        print("your pet has no fun!");    
+                    }
                     void FullHunger()
                     {
                         hunger = 100;
